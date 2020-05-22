@@ -113,7 +113,7 @@ remap({"alt", "ctrl"}, "Z", function()
 end)
 
 -- Launch iTerm
-remap({"alt"}, "return", function()
+remap({"alt"}, "E", function()
     hs.application.launchOrFocus("iTerm")
 end)
 
