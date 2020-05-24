@@ -9,7 +9,7 @@
 -- アプリケーション起動ショートカット系
 -- alt                    z Chrome起動
 -- alt  + ctrl  +         z Chromium起動
--- alt               return iTerm起動
+-- alt                    e iTerm起動
 --
 -- ウインドウ移動
 -- alt  + shift +         h 左に10ポイントウィンドウを移動
@@ -30,7 +30,8 @@
 -- alt  +                 b 4分の1サイズで左下
 -- alt  +                 n 4分の1サイズで右下
 -- alt  +                 c 画面半分横幅にし、真ん中へ移動
--- alt  +                 m フルサイズ
+-- alft +                 m y位置を縦真ん中に揃える、ウィンドウ高さがはみ出る時はリサイズ
+-- alt  +                 f フルサイズ
 --
 -- その他
 -- 本ファイル保存時自動Reload
@@ -159,6 +160,17 @@ resizeFrame({"alt"}, "K", function(f, screen, max)
     f.h = max.h
 end)
 
+-- alien window middle
+resizeFrame({"alt"}, "M", function(f, screen, max)
+    local halfHeight = half(max.h)
+    f.y = halfHeight - half(halfHeight)
+
+    if f.h > (max.h - f.y) then
+      f.h = max.h - f.y
+    end
+
+end)
+
 -- half width, full height, centering
 resizeFrame({"alt"}, "C", function(f, screen, max)
     local screenCenter = half(max.w)
@@ -218,7 +230,7 @@ resizeFrame({"alt"}, "N", function(f, screen, max)
 end)
 
 -- full screen
-resizeFrame({"alt"}, "M", function(f, screen, max)
+resizeFrame({"alt"}, "F", function(f, screen, max)
     f.x = max.x
     f.y = max.y
     f.w = max.w
