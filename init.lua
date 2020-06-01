@@ -12,10 +12,10 @@
 -- alt                    e iTerm起動
 --
 -- ウインドウ移動
--- alt  + shift +         h 左に10ポイントウィンドウを移動
--- alt  + shift +         j 下に10ポイントウィンドウを移動
--- alt  + shift +         k 上に10ポイントウィンドウを移動
--- alt  + shift +         l 右に10ポイントウィンドウを移動
+-- alt  + shift +         h 左に5ポイントウィンドウを移動
+-- alt  + shift +         j 下に5ポイントウィンドウを移動
+-- alt  + shift +         k 上に5ポイントウィンドウを移動
+-- alt  + shift +         l 右に5ポイントウィンドウを移動
 --
 -- ウインドウフォーカス
 -- alt  + ctrl  +         h フォーカスを左に
@@ -122,14 +122,14 @@ end)
 ---------------
 -- Move window
 ---------------
--- move current window to 10 point left.
-remap({"alt", "shift"}, "H", function() moveWin('x', -10) end)
+-- move current window to 5 point left.
+remap({"alt", "shift"}, "H", function() moveWin('x', -5) end)
 -- move current window to 10 point downwards
-remap({"alt", "shift"}, "J", function() moveWin('y', 10) end)
+remap({"alt", "shift"}, "J", function() moveWin('y', 5) end)
 -- move current window to 10 point above.
-remap({"alt", "shift"}, "K", function() moveWin('y', -10) end)
+remap({"alt", "shift"}, "K", function() moveWin('y', -5) end)
 -- move current window to 10 point right.
-remap({"alt", "shift"}, "L", function() moveWin('x', 10) end)
+remap({"alt", "shift"}, "L", function() moveWin('x', 5) end)
 
 -----------------------
 -- Change focus
