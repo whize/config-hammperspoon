@@ -118,6 +118,10 @@ remap({"alt"}, "E", function()
     hs.application.launchOrFocus("iTerm")
 end)
 
+-- Launch PhpStorm
+remap({"alt"}, "P", function()
+    hs.application.launchOrFocus("PhpStorm")
+end)
 
 ---------------
 -- Move window
@@ -171,6 +175,14 @@ resizeFrame({"alt"}, "M", function(f, screen, max)
 
 end)
 
+resizeFrame({"alt", "shift"}, "C", function(f, screen, max)
+    local byFive = max.w / 5
+    f.x = byFive
+    f.y = 0
+    f.w = max.w / 5 * 3
+    f.h = max.h
+end)
+
 -- half width, full height, centering
 resizeFrame({"alt"}, "C", function(f, screen, max)
     local screenCenter = half(max.w)
@@ -180,6 +192,7 @@ resizeFrame({"alt"}, "C", function(f, screen, max)
     f.w = half(max.w)
     f.h = max.h
 end)
+
 
 --
 -- quater size
