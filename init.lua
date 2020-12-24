@@ -176,10 +176,10 @@ resizeFrame({"alt"}, "M", function(f, screen, max)
 end)
 
 resizeFrame({"alt", "shift"}, "C", function(f, screen, max)
-    local byFive = max.w / 5
+    local byFive = max.w / 7
     f.x = byFive
     f.y = 0
-    f.w = max.w / 5 * 3
+    f.w = max.w / 7 * 5
     f.h = max.h
 end)
 
